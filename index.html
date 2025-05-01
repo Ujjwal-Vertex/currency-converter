@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i> Global Currency Converter</h1>
+            <p>Real-time exchange rates for over 150 currencies</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="card-header">
+                    <h2>Currency Converter</h2>
+                    <div class="last-updated" id="lastUpdated"></div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="amount-section">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" value="1" min="0" step="0.01">
+                    </div>
+                    
+                    <div class="currency-section">
+                        <div class="currency-selector">
+                            <label for="fromCurrency">From</label>
+                            <div class="select-wrapper">
+                                <select id="fromCurrency">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                                <div class="flag-container" id="fromFlag"></div>
+                            </div>
+                        </div>
+                        
+                        <button id="swapCurrencies" class="swap-btn" aria-label="Swap currencies">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="currency-selector">
+                            <label for="toCurrency">To</label>
+                            <div class="select-wrapper">
+                                <select id="toCurrency">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                                <div class="flag-container" id="toFlag"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-section">
+                        <div class="result-amount" id="resultAmount">0.00</div>
+                        <div class="conversion-rate" id="conversionRate"></div>
+                    </div>
+                    
+                    <button id="convertBtn" class="convert-btn">Convert</button>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+                <ol>
+                    <li>Enter the amount you want to convert</li>
+                    <li>Select the source and target currencies</li>
+                    <li>Click "Convert" or let the converter work automatically</li>
+                    <li>View the converted amount and exchange rate</li>
+                </ol>
+                <div class="disclaimer">
+                    <p><strong>Note:</strong> Exchange rates are updated every hour. For financial decisions, please verify with your bank.</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Global Currency Converter. Data provided by <a href="https://www.exchangerate-api.com" target="_blank">ExchangeRate-API</a>.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1Qqk3kVKd9/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/_ujjwal_tripathi_7?igsh=MXR5YjE4MnRtbHp5Yg==" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/ujjwal-vertex" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
